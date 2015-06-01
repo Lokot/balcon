@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ru.skysoftlab.balcon</groupId>
+		<artifactId>balcon-parent</artifactId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>ru.skysoftlab.balcon</groupId>
+	<artifactId>balcon-app</artifactId>
+	<packaging>ear</packaging>
+	<name>Balcon Application Module</name>
+	<dependencies>
+		<dependency>
+			<groupId>ru.skysoftlab.balcon</groupId>
+			<artifactId>balcon-common</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>ru.skysoftlab.balcon</groupId>
+			<artifactId>balcon-persistence</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>ru.skysoftlab.balcon</groupId>
+			<artifactId>balcon-impl</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>ru.skysoftlab.balcon</groupId>
+			<artifactId>balcon-web</artifactId>
+			<type>war</type>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+	<profiles>
+		<profile>
+			<id>total</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-ear-plugin</artifactId>
+						<configuration>
+							<earName>balcon-app</earName>
+							<defaultLibBundleDir>lib</defaultLibBundleDir>
+							<modules>
+								<!-- <jarModule> <groupId>org.jboss.logging</groupId> <artifactId>jboss-logging</artifactId> 
+									</jarModule> -->
+								<jarModule>
+									<groupId>org.jboss.logging</groupId>
+									<artifactId>jboss-logging-annotations</artifactId>
+								</jarModule>
+								<jarModule>
+									<groupId>org.jboss.logging</groupId>
+									<artifactId>jboss-logging-processor</artifactId>
+								</jarModule>
+								<jarModule>
+									<groupId>ru.skysoftlab.balcon</groupId>
+									<artifactId>balcon-common</artifactId>
+								</jarModule>
+								<jarModule>
+									<groupId>ru.skysoftlab.balcon</groupId>
+									<artifactId>balcon-persistence</artifactId>
+								</jarModule>
+								<ejbModule>
+									<groupId>ru.skysoftlab.balcon</groupId>
+									<artifactId>balcon-impl</artifactId>
+								</ejbModule>
+								<webModule>
+									<groupId>ru.skysoftlab.balcon</groupId>
+									<artifactId>balcon-web</artifactId>
+									<bundleFileName>balcon-web.war</bundleFileName>
+									<contextRoot>balcon</contextRoot>
+								</webModule>
+							</modules>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

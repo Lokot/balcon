@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Protonizer Impl" verbose="1">
+
+    <test name="persistenceTest" preserve-order="true">
+    	<classes>
+    		<!-- 
+    		<class name="ru.skysoftlab.balcon.impl.test.TestSuiteRunner"></class>
+    		 -->
+    		<class name="ru.skysoftlab.balcon.impl.test.PersonActionPersistenceTest"></class>
+    	</classes>
+    </test>
+
+	<!-- 
+    <test name="transactionTest" preserve-order="true">
+    	<classes>
+    		<class name="ru.skysoftlab.balcon.impl.test.PersonActionUserTransactionTest"></class>
+    	</classes>
+    </test>
+     -->
+    
+</suite>

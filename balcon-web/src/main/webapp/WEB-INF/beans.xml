@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<alternatives>
+		<class>ru.skysoftlab.balcon.cdi.tutorial.UserGreetingImpl</class>
+		<class>ru.skysoftlab.balcon.cdi.tutorial.CustomAccessControl</class>
+	</alternatives>
+	<decorators>
+		<class>ru.skysoftlab.balcon.cdi.tutorial.NavigationLogDecorator</class>
+	</decorators>
+</beans>

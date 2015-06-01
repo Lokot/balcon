@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Protonizer Common" verbose="1">
+
+
+    <test name="general" preserve-order="true">
+    </test>
+
+</suite>

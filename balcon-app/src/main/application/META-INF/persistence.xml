@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+	<persistence-unit name="balcon" transaction-type="JTA">
+		<jta-data-source>java:jboss/datasources/balconDS</jta-data-source>
+
+		<!-- Классификатор -->
+		<class>ru.skysoftlab.balcon.persistence.Person</class>
+		<class>ru.skysoftlab.balcon.persistence.BigPerson</class>
+
+		<exclude-unlisted-classes />
+
+		<properties>
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.max_size" value="100" />
+			<property name="hibernate.c3p0.acquire_increment" value="1" />
+			<property name="hibernate.c3p0.idle_test_period" value="300" />
+			<property name="hibernate.c3p0.max_statements" value="200" />
+			<property name="hibernate.c3p0.timeout" value="1000" />
+
+			<property name="hibernate.cache.region.factory_class"
+				value="org.jboss.as.jpa.hibernate4.infinispan.InfinispanRegionFactory" />
+			<property name="hibernate.cache.infinispan.cachemanager"
+				value="java:jboss/infinispan/hibernate" />
+			<property name="hibernate.cache.use_second_level_cache"
+				value="true" />
+			<property name="hibernate.cache.use_query_cache" value="true" />
+			<property name="hibernate.cache.use_structured_entries"
+				value="true" />
+			<property name="hibernate.cache.infinispan.use_synchronization"
+				value="false" />
+			<property name="hibernate.cache.infinispan.statistics"
+				value="true" />
+
+			<property name="hibernate.cache.infinispan.entity.eviction.strategy"
+				value="LRU" />
+			<property
+				name="hibernate.cache.infinispan.entity.eviction.wake_up_interval"
+				value="60000" />
+			<property name="hibernate.cache.infinispan.entity.eviction.max_entries"
+				value="150000" />
+			<property name="hibernate.cache.infinispan.entity.expiration.lifespan"
+				value="600000" />
+			<property name="hibernate.cache.infinispan.entity.expiration.max_idle"
+				value="300000" />
+
+			<property name="hibernate.cache.infinispan.query.eviction.strategy"
+				value="LRU" />
+			<property
+				name="hibernate.cache.infinispan.query.eviction.wake_up_interval"
+				value="3600000" />
+			<property name="hibernate.cache.infinispan.query.eviction.max_entries"
+				value="20000" />
+			<property name="hibernate.cache.infinispan.query.expiration.lifespan"
+				value="600000" />
+			<property name="hibernate.cache.infinispan.query.expiration.max_idle"
+				value="300000" />
+
+			<property name="hibernate.generate_statistics" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="use_sql_comments" value="true" />
+		</properties>
+	</persistence-unit>
+
+</persistence>

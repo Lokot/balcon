@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<xa-datasource jndi-name="java:jboss/datasources/protonizerDS"
+		pool-name="frontierPool" enabled="true">
+		<xa-datasource-property name="ServerName">
+			10.10.2.158
+		</xa-datasource-property>
+		<xa-datasource-property name="PortNumber">
+			5432
+		</xa-datasource-property>
+		<xa-datasource-property name="DatabaseName">
+			protonizer
+		</xa-datasource-property>
+		<driver>postgresql</driver>
+		<xa-pool>
+			<min-pool-size>1</min-pool-size>
+			<max-pool-size>5</max-pool-size>
+			<prefill>true</prefill>
+			<use-strict-min>false</use-strict-min>
+			<flush-strategy>FailingConnectionOnly</flush-strategy>
+		</xa-pool>
+		<security>
+			<user-name>protonizer</user-name>
+		</security>
+		<timeout>
+			<blocking-timeout-millis>30000</blocking-timeout-millis>
+			<idle-timeout-minutes>10</idle-timeout-minutes>
+		</timeout>
+	</xa-datasource>
+</datasources>

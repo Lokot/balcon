@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>ru.skysoftlab.balcon</groupId>
+		<artifactId>balcon-parent</artifactId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>ru.skysoftlab.balcon</groupId>
+	<artifactId>balcon-impl</artifactId>
+	<packaging>jar</packaging>
+	<name>Balcon Impl Module</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>ru.skysoftlab.balcon</groupId>
+			<artifactId>balcon-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ru.skysoftlab.balcon</groupId>
+			<artifactId>balcon-persistence</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.infinispan</groupId>
+			<artifactId>infinispan-core</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
